@@ -1,0 +1,5 @@
+*
+!Builds/EdgegapServer/
+!edgegap/start-server.sh
+Builds/EdgegapServer/*_BurstDebugInformation_DoNotShip
+Builds/EdgegapServer/*_BackUpThisFolder_ButDontShipItWithYourGame
