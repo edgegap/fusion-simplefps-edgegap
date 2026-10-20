@@ -88,7 +88,7 @@ If the client doesn't connect, the region most likely doesn't match the one in t
 |---|---|---|
 | `ARBITRIUM_REQUEST_ID` | Edgegap | The session name becomes `<request id>.pr.edgegap.net`, the deployment's FQDN. |
 | `ARBITRIUM_PORT_GAMEPORT_INTERNAL` | Edgegap | The UDP port the server binds (7777 by default). It binds `0.0.0.0`, so clients connect Direct. |
-| `PHOTON_REGION` | You (version or deployment) | A fixed Photon region, for example `us`. When it isn't set, the server uses the region with the best ping from where it runs: a Toronto deployment picked `cae`. |
+| `PHOTON_REGION` | You (version or deployment) | A fixed Photon region, for example `us`. When it isn't set, the server uses the region with the best ping from where it runs: a Toronto deployment picked `cae`, Newark `us`. Not tested yet. |
 | `ARBITRIUM_DELETE_URL`, `ARBITRIUM_DELETE_TOKEN` | Edgegap | When the server process exits on its own, the start script uses them to stop the deployment. |
 
 ## Why the Startup scene is in the server build
@@ -120,7 +120,7 @@ On 2026-10-20, with Simple FPS 2.1.1, Fusion 2.1.1 (build 2177) and Unity 6000.3
 - A local container with two clients: both joined, Relayed (expected locally), no exceptions.
 - An Edgegap deployment in Newark (Photon region `us`) with two clients that joined through the Party menu, run with `scripts/test-clients.sh`: CT **Direct**, 11 to 29 ms, two players, Deathmatch loaded, no exceptions on the clients or the server. An earlier run with the same changes, made by hand, in Toronto (`cae`): Direct, 11 to 24 ms.
 
-Not tested: more than two players, a match played to its end, whether the server exits after a match, the CPU a full match needs, macOS, and the Edgegap plugin's build button.
+Not tested: the `PHOTON_REGION` override, more than two players, a match played to its end, whether the server exits after a match, the CPU a full match needs, macOS, and the Edgegap plugin's build button.
 
 ## Licence
 
